@@ -11,4 +11,12 @@ namespace App\MyStuff;
 
 class Slot implements ControllerInterface {
 
+
+    public $object;
+
+    public function __construct(ControllableInterface $controllable)
+    {
+        $this->object = $controllable;
+    }
+
 }

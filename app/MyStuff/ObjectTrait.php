@@ -13,21 +13,21 @@ trait ObjectTrait {
 
     public $location;
 
-    public $name;
+    public $type;
 
     public function getLocation()
     {
         return $this->location;
     }
 
-    public function getName()
+    public function getType()
     {
-        return $this->name;
+        return $this->type;
     }
 
-    public function setName($name)
+    public function setType($type)
     {
-        $this->name = $name;
+        $this->type = $type;
     }
 
     public function setLocation($location)

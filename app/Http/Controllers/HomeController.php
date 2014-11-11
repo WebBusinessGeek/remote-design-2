@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\MyStuff\Object;
+use App\MyStuff\Remote;
+use App\MyStuff\Slot;
+
 class HomeController extends Controller {
 
 	/*
@@ -17,7 +21,9 @@ class HomeController extends Controller {
 
 	public function index()
 	{
-		return view('hello');
+		
+
+
 	}
 
 }

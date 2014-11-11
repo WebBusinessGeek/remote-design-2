@@ -11,6 +11,20 @@ namespace App\MyStuff;
 
 class Remote {
 
+    public $controller;
 
+    public function __construct()
+    {
+        $this->controller = [];
+    }
+
+
+
+    public function addController(ControllerInterface $controller)
+    {
+        $this->controller[] = $controller;
+
+        return $this;
+    }
 
 }
