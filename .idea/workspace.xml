@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2567d228-cd19-4a80-b021-53ddecc0e4ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MyStuff/Object.php" afterPath="$PROJECT_DIR$/app/MyStuff/Object.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ObjectTest.php" afterPath="$PROJECT_DIR$/tests/ObjectTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MyStuff/State.php" afterPath="$PROJECT_DIR$/app/MyStuff/State.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MyStuff/StateAbleInterface.php" afterPath="$PROJECT_DIR$/app/MyStuff/StateAbleInterface.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/StateTest.php" afterPath="$PROJECT_DIR$/tests/StateTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -32,8 +32,8 @@
       <file leaf-file-name="State.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/MyStuff/State.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.971223" vertical-offset="75" max-vertical-offset="2850">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0647482" vertical-offset="805" max-vertical-offset="3150">
+              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -297,15 +297,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -331,6 +331,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -341,12 +342,11 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -370,26 +370,34 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/MyStuff/State.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="2850">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/StateTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="2950">
           <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
-            <marker date="1415816489000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1415816489000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1415822215000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1415822215000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -472,13 +480,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="56475">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -646,10 +654,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.78417265" vertical-offset="55" max-vertical-offset="900">
           <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding>
-            <marker date="1415814055000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1415814055000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -657,10 +662,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43165466" vertical-offset="0" max-vertical-offset="695">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding>
-            <marker date="1415814055000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1415814055000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -668,15 +670,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.74820143" vertical-offset="330" max-vertical-offset="1100">
           <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="42" selection-end-column="7" />
-          <folding>
-            <marker date="1415815979000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1415815979000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1415815979000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415815979000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415815979000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415815979000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415815979000" expanded="true" signature="-1:-1" placeholder="//..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -684,45 +678,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.352518" vertical-offset="780" max-vertical-offset="1525">
           <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="59" selection-end-column="7" />
-          <folding>
-            <marker date="1415815979000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1415815979000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1415815979000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1415815979000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415815979000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415815979000" expanded="true" signature="-1:-1" placeholder="//..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/StateTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.9568343" vertical-offset="605" max-vertical-offset="4600">
-          <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="181" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.64748204" vertical-offset="0" max-vertical-offset="4600">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <marker date="1415816489000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1415816489000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415816489000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1415822215000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1415822215000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415822215000" expanded="true" signature="-1:-1" placeholder="//..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/MyStuff/State.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.971223" vertical-offset="75" max-vertical-offset="2850">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0647482" vertical-offset="805" max-vertical-offset="3150">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -11,7 +11,7 @@ namespace App\MyStuff;
 
 interface StateAbleInterface {
 
-    public function activate();
+    public function activateTest();
 
     public function deactivate();
 

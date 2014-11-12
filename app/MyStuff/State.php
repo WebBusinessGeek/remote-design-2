@@ -37,8 +37,15 @@ class State implements StateAbleInterface{
         return ' is ' . $this->getActivator();
     }
 
+    
+    public function activateTest()
+    {
+        return ' is ' . $this->getActivator();
+    }
+
     public function deactivate()
     {
+
         return ' is ' . $this->getDeactivator();
     }
 
@@ -109,6 +116,11 @@ class State implements StateAbleInterface{
         $this->adjustPreviousStateAfterUndo();
 
         return $this->currentState;
+    }
+
+    public function addis($argument)
+    {
+        return ' is '. $argument;
     }
 
 }
