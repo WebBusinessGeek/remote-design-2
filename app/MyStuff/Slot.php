@@ -28,4 +28,9 @@ class Slot implements ControllerInterface {
     {
         return $this->object->deactivate();
     }
+
+    public function undo()
+    {
+        return $this->object->undo();
+    }
 }

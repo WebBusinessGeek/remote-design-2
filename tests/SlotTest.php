@@ -32,4 +32,35 @@ class SlotTest extends PHPUnit_Framework_TestCase {
 
     }
 
+    public function test_slot_can_call_update_function()
+    {
+        $state = new \App\MyStuff\State('on', 'off');
+        $light = new \App\MyStuff\Object('light', 'kitchen');
+        $light->addState($state);
+
+        $slot = new \App\MyStuff\Slot($light);
+
+        $this->assertEquals('cant undo', $slot->undo());
+
+        $slot->activate();
+        $this->assertEquals('light in the kitchen is off', $slot->undo());
+
+        $slot->activate();
+        $slot->deactivate();
+        $this->assertEquals('light in the kitchen is on', $slot->undo());
+        $this->assertEquals('light in the kitchen is off', $slot->undo());
+        $this->assertEquals('cant undo', $slot->undo());
+
+        $slot->activate();
+        $slot->deactivate();
+        $slot->activate();
+        $slot->deactivate();
+        $this->assertEquals('light in the kitchen is on', $slot->undo());
+        $this->assertEquals('light in the kitchen is off', $slot->undo());
+        $this->assertEquals('light in the kitchen is on', $slot->undo());
+        $this->assertEquals('light in the kitchen is off', $slot->undo());
+        $this->assertEquals('cant undo', $slot->undo());
+
+    }
+
 }

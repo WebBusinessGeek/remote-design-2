@@ -65,33 +65,29 @@ class ObjectTest extends \PHPUnit_Framework_TestCase {
         $light = new Object('light', 'kitchen');
         $light->addState($state);
 
-        //$this->assertEquals('cant undo', $light->newUndo());
-
-        $light->activate();
-        $this->assertEquals('light in the kitchen is off', $light->undo());
-
-        $light->activate();
-        $this->assertEquals('light in the kitchen is off', $light->undo());
-
-        $light->activate();
-        $light->deactivate();
-        $this->assertEquals('light in the kitchen is on', $light->undo());
-
-
-        $this->assertEquals('light in the kitchen is off', $light->undo());
-
-        $light->activate();
-        $light->deactivate();
-        $light->activate();
-        $light->deactivate();
-        $this->assertEquals('light in the kitchen is on', $light->undo());
-        $this->assertEquals('light in the kitchen is off', $light->undo());
-        $this->assertEquals('light in the kitchen is on', $light->undo());
-        $this->assertEquals('light in the kitchen is off', $light->undo());
-
-        //should be cant undo
         $this->assertEquals('cant undo', $light->undo());
 
+        $light->activate();
+        $this->assertEquals('light in the kitchen is off', $light->undo());
 
+        $light->activate();
+        $this->assertEquals('light in the kitchen is off', $light->undo());
+
+        $light->activate();
+        $light->deactivate();
+        $this->assertEquals('light in the kitchen is on', $light->undo());
+        $this->assertEquals('light in the kitchen is off', $light->undo());
+        $this->assertEquals('cant undo', $light->undo());
+
+        $light->activate();
+        $light->deactivate();
+        $light->activate();
+        $light->deactivate();
+        $this->assertEquals('light in the kitchen is on', $light->undo());
+        $this->assertEquals('light in the kitchen is off', $light->undo());
+        $this->assertEquals('light in the kitchen is on', $light->undo());
+        $this->assertEquals('light in the kitchen is off', $light->undo());
+
+        $this->assertEquals('cant undo', $light->undo());
     }
 }

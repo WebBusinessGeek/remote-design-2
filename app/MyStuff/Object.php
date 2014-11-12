@@ -41,19 +41,16 @@ class Object implements ControllableInterface {
     {
         return $this->type. ' in the '. $this->location . $this->state->undo();
     }
-    
+
 
     public function undo()
     {
         $response = $this->undoTest();
+
         $findMe = 'cant undo';
 
         $here = strpos($response, $findMe);
 
-        if($here)
-        {
-            return 'cant undo';
-        }
-        return $response;
+        return ($here) ? 'cant undo' : $response;
     }
 }
