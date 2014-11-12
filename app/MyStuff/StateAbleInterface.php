@@ -15,5 +15,7 @@ interface StateAbleInterface {
 
     public function deactivate();
 
+    public function undo();
+
 
 }

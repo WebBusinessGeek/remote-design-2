@@ -93,4 +93,18 @@ class State implements StateAbleInterface{
         return array_pop($this->previousStateLog);
     }
 
+    public function adjustPreviousStateAfterUndo()
+    {
+        $this->previousState = end($this->previousStateLog);
+    }
+
+    public function undo()
+    {
+        $this->currentState = $this->getLastPreviousStateFromLogThenPop();
+
+        $this->adjustPreviousStateAfterUndo();
+
+        return $this->currentState;
+    }
+
 }
