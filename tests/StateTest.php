@@ -36,7 +36,7 @@ class StateTest extends \PHPUnit_Framework_TestCase {
         $state = new State('open', 'close');
 
         $this->assertEquals(' is open', $state->activateTest());
-        $this->assertEquals(' is close', $state->deactivate());
+        $this->assertEquals(' is close', $state->deactivateTest());
     }
 
     public function test_state_is_set_with_a_currentState()
@@ -54,7 +54,7 @@ class StateTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals(' is on', $state->changeOfState($state->activateTest()));
 
-        $this->assertEquals(' is off', $state->changeOfState($state->deactivate()));
+        $this->assertEquals(' is off', $state->changeOfState($state->deactivateTest()));
 
 
     }
@@ -77,7 +77,7 @@ class StateTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals(1, $state->getPreviousStateLogCount());
 
-        $state->changeOfState($state->deactivate());
+        $state->changeOfState($state->deactivateTest());
 
         $this->assertEquals(2, $state->getPreviousStateLogCount());
 
@@ -94,7 +94,7 @@ class StateTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals(1, $state->getPreviousStateLogCount());
 
-        $state->changeOfState($state->deactivate());
+        $state->changeOfState($state->deactivateTest());
 
         $this->assertEquals(2, $state->getPreviousStateLogCount());
 
@@ -120,7 +120,7 @@ class StateTest extends \PHPUnit_Framework_TestCase {
         $state = new State('on', 'off');
 
         $state->changeOfState($state->activateTest());
-        $state->changeOfState($state->deactivate());
+        $state->changeOfState($state->deactivateTest());
         $state->changeOfState($state->activateTest());
 
         $this->assertEquals(' is off', $state->undo());
@@ -133,7 +133,7 @@ class StateTest extends \PHPUnit_Framework_TestCase {
         $state = new State('on', 'off');
 
         $state->changeOfState($state->activateTest());//previous = off
-        $state->changeOfState($state->deactivate());//prevoius = on
+        $state->changeOfState($state->deactivateTest());//prevoius = on
         $state->changeOfState($state->activateTest());// previous = off
 
         $state->undo();
@@ -150,7 +150,7 @@ class StateTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('cant undo', $state->undo());
 
         $state->changeOfState($state->activateTest());//previous = off
-        $state->changeOfState($state->deactivate());//prevoius = on
+        $state->changeOfState($state->deactivateTest());//prevoius = on
         $state->changeOfState($state->activateTest());// previous = off
 
         $state->undo();
@@ -166,19 +166,19 @@ class StateTest extends \PHPUnit_Framework_TestCase {
 
     }
 
-//    public function test_state_changeOfState_is_called_when_activated_and_deactivated()
-//    {
-//        $state = new State('on', 'off');
-//
-//        $this->assertEquals(null, $state->previousState);
-//
-//        $state->activate();
-//
-//        $this->assertEquals(' is off', $state->previousState);
-//
-//        $state->deactivate();
-//
-//        $this->assertEquals(' is on', $state->previousState);
-//    }
+    public function test_state_changeOfState_is_called_when_activated_and_deactivated()
+    {
+        $state = new State('on', 'off');
+
+        $this->assertEquals(null, $state->previousState);
+
+        $state->activate();
+
+        $this->assertEquals(' is off', $state->previousState);
+
+        $state->deactivate();
+
+        $this->assertEquals(' is on', $state->previousState);
+    }
 
 }

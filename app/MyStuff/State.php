@@ -18,7 +18,7 @@ class State implements StateAbleInterface{
     {
         $this->activator = $default;
         $this->deactivator = $deactivate;
-        $this->currentState = $this->deactivate();
+        $this->currentState = $this->deactivateTest();
         $this->previousStateLog = [];
 
         if(isset($high))
@@ -34,18 +34,24 @@ class State implements StateAbleInterface{
 
     public function activate()
     {
-        return ' is ' . $this->getActivator();
-    }
-
-    
-    public function activateTest()
-    {
+        $this->changeOfState($this->addis($this->getActivator()));
         return ' is ' . $this->getActivator();
     }
 
     public function deactivate()
     {
+        $this->changeOfState($this->addis($this->getDeactivator()));
+        return ' is ' . $this->getDeactivator();
+    }
 
+
+    public function activateTest()
+    {
+        return ' is ' . $this->getActivator();
+    }
+
+    public function deactivateTest()
+    {
         return ' is ' . $this->getDeactivator();
     }
 

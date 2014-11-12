@@ -13,7 +13,7 @@ interface StateAbleInterface {
 
     public function activateTest();
 
-    public function deactivate();
+    public function deactivateTest();
 
     public function undo();
 
