@@ -37,24 +37,23 @@ class Object implements ControllableInterface {
         return $this->type. ' in the '. $this->location . $this->state->deactivate();
     }
 
-    public function undo()
+    public function undoTest()
     {
         return $this->type. ' in the '. $this->location . $this->state->undo();
     }
+    
 
-//    public function isUndoable()
-//    {
-//
-//        return ($this->state->undo() == 'cant undo') ? false : true;
-//
-//    }
-//
-//    public function newUndo()
-//    {
-//        if($this->state->undo() == 'cant undo')
-//        {
-//            return 'cant undo';
-//        }
-//        return $this->undo();
-//    }
+    public function undo()
+    {
+        $response = $this->undoTest();
+        $findMe = 'cant undo';
+
+        $here = strpos($response, $findMe);
+
+        if($here)
+        {
+            return 'cant undo';
+        }
+        return $response;
+    }
 }
