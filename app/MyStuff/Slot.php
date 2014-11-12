@@ -19,4 +19,13 @@ class Slot implements ControllerInterface {
         $this->object = $controllable;
     }
 
+    public function activate()
+    {
+        return $this->object->activate();
+    }
+
+    public function deactivate()
+    {
+        return $this->object->deactivate();
+    }
 }

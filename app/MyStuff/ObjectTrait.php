@@ -11,6 +11,8 @@ namespace App\MyStuff;
 
 trait ObjectTrait {
 
+    public $state;
+
     public $location;
 
     public $type;

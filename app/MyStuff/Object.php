@@ -22,4 +22,18 @@ class Object implements ControllableInterface {
 
     }
 
+    public function addState(StateAbleInterface $state)
+    {
+        $this->state = $state;
+    }
+
+    public function activate()
+    {
+        return $this->type .' in the '. $this->location . $this->state->activate();
+    }
+
+    public function deactivate()
+    {
+        return $this->type. ' in the '. $this->location . $this->state->deactivate();
+    }
 }
