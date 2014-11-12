@@ -13,10 +13,12 @@ class State implements StateAbleInterface{
 
     use StateAbleTrait;
 
+
     public function __construct($default, $deactivate, $low = null, $high = null)
     {
         $this->activator = $default;
         $this->deactivator = $deactivate;
+        $this->currentState = $this->deactivate();
 
         if(isset($high))
         {
@@ -57,6 +59,25 @@ class State implements StateAbleInterface{
     public function getHigh()
     {
         return $this->highSetting;
+    }
+
+    public function getCurrentState()
+    {
+        return $this->currentState;
+    }
+
+    public function changeOfState($stateChangeMethod)
+    {
+        $this->previousState = $this->currentState;
+
+        $this->currentState = $stateChangeMethod;
+
+        return $this->currentState;
+    }
+
+    public function getPreviousState()
+    {
+        return $this->previousState;
     }
 
 }

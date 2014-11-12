@@ -21,6 +21,10 @@ trait StateAbleTrait {
 
     public $lowSetting;
 
+    public $currentState;
+
+    public $previousState;
+
 
 
 

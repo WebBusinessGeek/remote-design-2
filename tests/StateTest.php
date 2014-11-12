@@ -9,6 +9,7 @@
 namespace Tests\StateTest;
 
 
+use App\MyStuff\Slot;
 use App\MyStuff\State;
 
 class StateTest extends \PHPUnit_Framework_TestCase {
@@ -36,6 +37,36 @@ class StateTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals(' is open', $state->activate());
         $this->assertEquals(' is close', $state->deactivate());
+    }
+
+    public function test_state_is_set_with_a_currentState()
+    {
+        $state = new State('on', 'off');
+
+        $this->assertEquals(' is off', $state->getCurrentState());
+    }
+
+    public function test_state_currentState_will_update_with_each_changeOfState()
+    {
+        $state = new State('on', 'off');
+
+        $this->assertEquals(' is off', $state->getCurrentState());
+
+        $this->assertEquals(' is on', $state->changeOfState($state->activate()));
+
+        $this->assertEquals(' is off', $state->changeOfState($state->deactivate()));
+
+
+    }
+
+    public function test_state_previousState_will_update_with_each_changeOfState()
+    {
+        $state = new State('on', 'off');
+
+        $state->changeOfState($state->activate());
+
+        $this->assertEquals(' is off', $state->getPreviousState());
+
     }
 
 }
