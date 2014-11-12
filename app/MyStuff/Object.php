@@ -36,4 +36,9 @@ class Object implements ControllableInterface {
     {
         return $this->type. ' in the '. $this->location . $this->state->deactivate();
     }
+
+//    public function undo()
+//    {
+//        return $this->type. ' in the '. $this->location . $this->state->undo();
+//    }
 }

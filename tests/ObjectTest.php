@@ -45,4 +45,17 @@ class ObjectTest extends \PHPUnit_Framework_TestCase {
 
     }
 
+//    public function test_object_can_call_undo_on_state()
+//    {
+//        $state = new State('on', 'off');
+//        $light = new Object('light', 'kitchen');
+//        $light->addState($state);
+//
+//        $this->assertEquals('light in the kitchen is on', $light->activate());
+//        $this->assertEquals('light in the kitchen is off', $light->deactivate());
+//
+//        $this->assertEquals('light in the kitchen is on', $light->undo());
+//        $this->assertEquals('light in the kitchen is off', $light->undo());
+//
+//    }
 }

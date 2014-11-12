@@ -166,4 +166,19 @@ class StateTest extends \PHPUnit_Framework_TestCase {
 
     }
 
+//    public function test_state_changeOfState_is_called_when_activated_and_deactivated()
+//    {
+//        $state = new State('on', 'off');
+//
+//        $this->assertEquals(null, $state->previousState);
+//
+//        $state->activate();
+//
+//        $this->assertEquals(' is off', $state->previousState);
+//
+//        $state->deactivate();
+//
+//        $this->assertEquals(' is on', $state->previousState);
+//    }
+
 }
