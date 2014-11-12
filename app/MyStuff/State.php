@@ -100,6 +100,10 @@ class State implements StateAbleInterface{
 
     public function undo()
     {
+        if($this->previousState == null)
+        {
+            return 'cant undo';
+        }
         $this->currentState = $this->getLastPreviousStateFromLogThenPop();
 
         $this->adjustPreviousStateAfterUndo();

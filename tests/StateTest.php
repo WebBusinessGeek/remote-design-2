@@ -143,9 +143,27 @@ class StateTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals(' is off', $state->previousState);
     }
 
-//    public function test_state_undo_function_checks_that_state_is_undoable()
-//    {
-//        $state = new State('on', 'off');
-//    }
+    public function test_state_undo_function_checks_that_state_is_undoable()
+    {
+        $state = new State('on', 'off');
+
+        $this->assertEquals('cant undo', $state->undo());
+
+        $state->changeOfState($state->activate());//previous = off
+        $state->changeOfState($state->deactivate());//prevoius = on
+        $state->changeOfState($state->activate());// previous = off
+
+        $state->undo();
+        $this->assertEquals(' is on', $state->previousState);
+
+        $state->undo();
+        $this->assertEquals(' is off', $state->previousState);
+
+        $state->undo();
+        $this->assertEquals(null, $state->previousState);
+
+        $this->assertEquals('cant undo', $state->undo());
+
+    }
 
 }

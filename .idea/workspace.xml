@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2567d228-cd19-4a80-b021-53ddecc0e4ef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MyStuff/State.php" afterPath="$PROJECT_DIR$/app/MyStuff/State.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MyStuff/StateAbleInterface.php" afterPath="$PROJECT_DIR$/app/MyStuff/StateAbleInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MyStuff/StateAbleTrait.php" afterPath="$PROJECT_DIR$/app/MyStuff/StateAbleTrait.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/StateTest.php" afterPath="$PROJECT_DIR$/tests/StateTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="remotedesign2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,8 +30,8 @@
       <file leaf-file-name="StateTest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/StateTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7122302" vertical-offset="2980" max-vertical-offset="3775">
-              <caret line="145" column="5" selection-start-line="145" selection-start-column="5" selection-end-line="148" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.60431653" vertical-offset="3530" max-vertical-offset="4225">
+              <caret line="164" column="57" selection-start-line="164" selection-start-column="57" selection-end-line="164" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -665,35 +662,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/MyStuff/State.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31654677" vertical-offset="2055" max-vertical-offset="2750">
-          <caret line="96" column="5" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.64316547" vertical-offset="2028" max-vertical-offset="2850">
+          <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
           <folding>
-            <marker date="1415814995000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415814995000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415815338000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/StateTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7122302" vertical-offset="2980" max-vertical-offset="3775">
-          <caret line="145" column="5" selection-start-line="145" selection-start-column="5" selection-end-line="148" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.60431653" vertical-offset="3530" max-vertical-offset="4225">
+          <caret line="164" column="57" selection-start-line="164" selection-start-column="57" selection-end-line="164" selection-end-column="57" />
           <folding />
         </state>
       </provider>
