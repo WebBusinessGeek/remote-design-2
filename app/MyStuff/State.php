@@ -44,6 +44,18 @@ class State implements StateAbleInterface{
         return ' is ' . $this->getDeactivator();
     }
 
+    public function undo()
+    {
+        if($this->previousState == null)
+        {
+            return 'cant undo';
+        }
+        $this->currentState = $this->getLastPreviousStateFromLogThenPop();
+
+        $this->adjustPreviousStateAfterUndo();
+
+        return $this->currentState;
+    }
 
     public function activateTest()
     {
@@ -111,18 +123,6 @@ class State implements StateAbleInterface{
         $this->previousState = end($this->previousStateLog);
     }
 
-    public function undo()
-    {
-        if($this->previousState == null)
-        {
-            return 'cant undo';
-        }
-        $this->currentState = $this->getLastPreviousStateFromLogThenPop();
-
-        $this->adjustPreviousStateAfterUndo();
-
-        return $this->currentState;
-    }
 
     public function addis($argument)
     {

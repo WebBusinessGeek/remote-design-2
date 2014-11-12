@@ -181,4 +181,6 @@ class StateTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals(' is on', $state->previousState);
     }
 
+
+
 }
