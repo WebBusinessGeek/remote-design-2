@@ -4,8 +4,6 @@
     <list default="true" id="2567d228-cd19-4a80-b021-53ddecc0e4ef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MyStuff/Object.php" afterPath="$PROJECT_DIR$/app/MyStuff/Object.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ObjectTest.php" afterPath="$PROJECT_DIR$/tests/ObjectTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MyStuff/State.php" afterPath="$PROJECT_DIR$/app/MyStuff/State.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/StateTest.php" afterPath="$PROJECT_DIR$/tests/StateTest.php" />
     </list>
     <ignored path="remotedesign2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ObjectTest.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/ObjectTest.php">
+      <file leaf-file-name="Object.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/MyStuff/Object.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64028776" vertical-offset="930" max-vertical-offset="1725">
-              <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="67" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.7122302" vertical-offset="705" max-vertical-offset="1500">
+              <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -691,8 +689,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/StateTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7553957" vertical-offset="3900" max-vertical-offset="4650">
-          <caret line="183" column="4" selection-start-line="183" selection-start-column="4" selection-end-line="183" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.79136693" vertical-offset="3875" max-vertical-offset="4650">
+          <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
           <folding>
             <marker date="1415822822000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
             <marker date="1415822822000" expanded="false" signature="-1:-1" placeholder="..." />
@@ -715,8 +713,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/MyStuff/State.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8776978" vertical-offset="2605" max-vertical-offset="3300">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.2877698" vertical-offset="875" max-vertical-offset="3300">
+          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
           <folding>
             <marker date="1415822822000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
             <marker date="1415822822000" expanded="true" signature="-1:-1" placeholder="..." />
@@ -744,26 +742,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/MyStuff/Object.php">
+    <entry file="file://$PROJECT_DIR$/tests/ObjectTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7553957" vertical-offset="325" max-vertical-offset="1100">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.38848922" vertical-offset="1255" max-vertical-offset="1950">
+          <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
           <folding>
-            <marker date="1415822964000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1415822964000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1415822964000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415822964000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415822964000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415822964000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415822964000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415825562000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1415825562000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1415825562000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415825562000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415825562000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415825562000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415825562000" expanded="true" signature="-1:-1" placeholder="//..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/ObjectTest.php">
+    <entry file="file://$PROJECT_DIR$/app/MyStuff/Object.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64028776" vertical-offset="930" max-vertical-offset="1725">
-          <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="67" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.7122302" vertical-offset="705" max-vertical-offset="1500">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
           <folding />
         </state>
       </provider>
