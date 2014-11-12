@@ -11,7 +11,9 @@
 |
 */
 
-$router->get('/', 'HomeController@index');
+$router->get('/', 'AppController@showHome');
+
+$router->get('/test', 'AppController@test');
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,8 @@ $router->get('/', 'HomeController@index');
 $router->controller('auth', 'AuthController');
 
 $router->controller('password', 'PasswordController');
+
+$blade = new \Illuminate\View\Compilers\BladeCompiler(new \Illuminate\Filesystem\Filesystem(), new \Illuminate\Support\Facades\Cache());
+$blade->setContentTags('<??', '??>');
+$blade->setEchoFormat('<???', '???>');
+

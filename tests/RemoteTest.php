@@ -111,8 +111,5 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
 
         }
 
-        public function test_remote_can_call_activate_and_deactivate_on_multiple_slots()
-        {
 
-        }
 }
