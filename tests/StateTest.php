@@ -69,4 +69,9 @@ class StateTest extends \PHPUnit_Framework_TestCase {
 
     }
 
+    public function test_state_previousStateLog_will_hold_all_previous_states()
+    {
+        
+    }
+
 }
