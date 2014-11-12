@@ -71,7 +71,48 @@ class StateTest extends \PHPUnit_Framework_TestCase {
 
     public function test_state_previousStateLog_will_hold_all_previous_states()
     {
-        
+        $state = new State('on', 'off');
+
+        $state->changeOfState($state->activate());
+
+        $this->assertEquals(1, $state->getPreviousStateLogCount());
+
+        $state->changeOfState($state->deactivate());
+
+        $this->assertEquals(2, $state->getPreviousStateLogCount());
+
+        $state->changeOfState($state->activate());
+
+        $this->assertEquals(3, $state->getPreviousStateLogCount());
+    }
+
+    public function test_state_previousStateLog_will_return_last_state_then_remove_from_log()
+    {
+        $state = new State('on', 'off');
+
+        $state->changeOfState($state->activate());
+
+        $this->assertEquals(1, $state->getPreviousStateLogCount());
+
+        $state->changeOfState($state->deactivate());
+
+        $this->assertEquals(2, $state->getPreviousStateLogCount());
+
+        $state->changeOfState($state->activate());
+
+        $this->assertEquals(3, $state->getPreviousStateLogCount());
+
+        $this->assertEquals(' is off', $state->getLastPreviousStateFromLogThenPop());
+
+        $this->assertEquals(2, $state->getPreviousStateLogCount());
+
+        $this->assertEquals(' is on', $state->getLastPreviousStateFromLogThenPop());
+
+        $this->assertEquals(1, $state->getPreviousStateLogCount());
+
+        $this->assertEquals(' is off', $state->getLastPreviousStateFromLogThenPop());
+
+        $this->assertEquals(0, $state->getPreviousStateLogCount());
     }
 
 }

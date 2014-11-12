@@ -19,6 +19,7 @@ class State implements StateAbleInterface{
         $this->activator = $default;
         $this->deactivator = $deactivate;
         $this->currentState = $this->deactivate();
+        $this->previousStateLog = [];
 
         if(isset($high))
         {
@@ -70,6 +71,8 @@ class State implements StateAbleInterface{
     {
         $this->previousState = $this->currentState;
 
+        $this->previousStateLog[] = $this->previousState;
+
         $this->currentState = $stateChangeMethod;
 
         return $this->currentState;
@@ -78,6 +81,16 @@ class State implements StateAbleInterface{
     public function getPreviousState()
     {
         return $this->previousState;
+    }
+
+    public function getPreviousStateLogCount()
+    {
+        return count($this->previousStateLog);
+    }
+
+    public function getLastPreviousStateFromLogThenPop()
+    {
+        return array_pop($this->previousStateLog);
     }
 
 }

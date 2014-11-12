@@ -25,6 +25,8 @@ trait StateAbleTrait {
 
     public $previousState;
 
+    public $previousStateLog;
+
 
 
 
