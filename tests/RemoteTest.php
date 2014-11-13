@@ -382,16 +382,34 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
             $remote->addController($slot)->addController($slot2);
 
             $this->assertEquals('light in the kitchen is on', $remote->activate(1));
-            $this->assertEquals('light in the kitchen is off', $remote->undo());
+            $this->assertEquals('light in the kitchen is off', $remote->undoTest());
 
             $remote->activate(2);
             $this->assertEquals('fan in the office is off', $remote->deactivate(2));
-            $this->assertEquals('fan in the office is on', $remote->undo());
-            $this->assertEquals('fan in the office is off', $remote->undo());
-            $this->assertEquals('cant undo', $remote->undo());
+            $this->assertEquals('fan in the office is on', $remote->undoTest());
+            $this->assertEquals('fan in the office is off', $remote->undoTest());
+            $this->assertEquals('cant undo', $remote->undoTest());
         }
 
-        //test if tells if undoable
+        public function test_remote_returns_message_if_undoable_()
+        {
+            $remote = new \App\MyStuff\Remote();
+
+            $state = new \App\MyStuff\State('on', 'off');
+            $light = new \App\MyStuff\Object('light', 'kitchen');
+            $light->addState($state);
+            $slot = new \App\MyStuff\Slot($light);
+
+            $remote->addController($slot);
+
+            $this->assertEquals('Cant undo. You have to do something first.', $remote->undo());
+
+            $remote->activate(1);
+
+            $this->assertEquals('light in the kitchen is off', $remote->undo());
+            $this->assertEquals('Cant undo. You have to do something first.', $remote->undo());
+        }
+
 
 
 }

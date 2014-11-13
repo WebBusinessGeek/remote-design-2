@@ -160,9 +160,15 @@ class Remote {
 
     }
 
-    public function undo()
+    public function undoTest()
     {
         return $this->getLastControllerFromlogThenPop()->undo();
+    }
+
+    public function undo()
+    {
+        $response = $this->undoTest();
+        return ($response == 'cant undo') ? 'Cant undo. You have to do something first.' : $response;
     }
 
 
