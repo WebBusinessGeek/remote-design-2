@@ -246,7 +246,27 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
             $this->assertEquals('fan in the office is off', $remote->callControllerAndAction($remote->getLastControllerUsed(), $remote->getLastActionUsed()));
 
         }
-        //test if can store lastactions and lastcontrollers in arrays on remote
+
+//        public function test_remote_can_store_lastactions_and_lastcontrollers_in_arrays_on_remote()
+//        {
+//            $remote = new \App\MyStuff\Remote();
+//
+//            $state = new \App\MyStuff\State('on', 'off');
+//            $light = new \App\MyStuff\Object('light', 'kitchen');
+//            $light->addState($state);
+//            $slot = new \App\MyStuff\Slot($light);
+//
+//
+//            $state2 = new \App\MyStuff\State('on', 'off');
+//            $fan = new \App\MyStuff\Object('fan', 'office');
+//            $fan->addState($state2);
+//            $slot2 = new \App\MyStuff\Slot($fan);
+//
+//            $remote->addController($slot)->addController($slot2);
+//
+//
+//
+//        }
 
         //test if can retreive last element of lastaction and last controller array
 
