@@ -364,7 +364,10 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
 
         }
 
-        //test if can call methods in the backwards order using an undo function
+        public function test_remote_calls_undo_method_on_controllable_object_stored_in_lastControllerLog_then_pops_off_from_log()
+        {
+
+        }
 
         //test if tells if undoable
 
