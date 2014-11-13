@@ -94,4 +94,14 @@ class Remote {
         $this->lastAction = $action;
     }
 
+    public function forceActivate($slot)
+    {
+        return $this->getController($slot)->activate();
+    }
+
+    public function forceDeactivate($slot)
+    {
+        return $this->getController($slot)->deactivate();
+    }
+
 }

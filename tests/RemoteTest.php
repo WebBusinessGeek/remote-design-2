@@ -181,8 +181,65 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
 
         }
 
-        //either
-        //test if can call method based on lastaction and lastcontroller
+        public function test_remote_can_force_activate_and_deactivate_without_logging_action_or_controller()
+        {
+            $remote = new \App\MyStuff\Remote();
+
+            $state = new \App\MyStuff\State('on', 'off');
+            $light = new \App\MyStuff\Object('light', 'kitchen');
+            $light->addState($state);
+            $slot = new \App\MyStuff\Slot($light);
+
+            $state2 = new \App\MyStuff\State('on', 'off');
+            $fan = new \App\MyStuff\Object('fan', 'office');
+            $fan->addState($state2);
+            $slot2 = new \App\MyStuff\Slot($fan);
+
+            $remote->addController($slot)->addController($slot2);
+
+            $this->assertEquals('light in the kitchen is on', $remote->forceActivate(1));
+            $this->assertEquals(null, $remote->getLastActionUsed());
+            $this->assertEquals(null, $remote->getLastControllerUsed());
+
+            $this->assertEquals('light in the kitchen is off', $remote->forceDeactivate(1));
+            $this->assertEquals(null, $remote->getLastActionUsed());
+            $this->assertEquals(null, $remote->getLastControllerUsed());
+
+            $this->assertEquals('fan in the office is on', $remote->forceActivate(2));
+            $this->assertEquals(null, $remote->getLastActionUsed());
+            $this->assertEquals(null, $remote->getLastControllerUsed());
+
+            $this->assertEquals('fan in the office is off', $remote->forceDeactivate(2));
+            $this->assertEquals(null, $remote->getLastActionUsed());
+            $this->assertEquals(null, $remote->getLastControllerUsed());
+
+            $this->assertEquals('fan in the office is on', $remote->activate(2));
+            $this->assertEquals('activate', $remote->getLastActionUsed());
+            $this->assertEquals($remote->getObjectType(2), $remote->getLastControllerUsed()->object->getType());
+
+        }
+
+//        public function test_remote_can_call_method_based_on_lastaction_and_lastcontroller()
+//        {
+//            $remote = new \App\MyStuff\Remote();
+//
+//            $state = new \App\MyStuff\State('on', 'off');
+//            $light = new \App\MyStuff\Object('light', 'kitchen');
+//            $light->addState($state);
+//            $slot = new \App\MyStuff\Slot($light);
+//
+//            $state2 = new \App\MyStuff\State('on', 'off');
+//            $fan = new \App\MyStuff\Object('fan', 'office');
+//            $fan->addState($state2);
+//            $slot2 = new \App\MyStuff\Slot($fan);
+//
+//            $remote->addController($slot)->addController($slot2);
+//
+//            $remote->activate(1);
+//
+//
+//
+//        }
         //test if can store lastactions and lastcontrollers in arrays on remote
 
 
