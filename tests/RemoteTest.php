@@ -314,9 +314,55 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
 
         }
 
+        public function test_remote_can_retrieve_lastaction_and_lastcontroller_from_logs_and_popoff_end_of_the_log_array()
+        {
+            $remote = new \App\MyStuff\Remote();
+
+            $state = new \App\MyStuff\State('on', 'off');
+            $light = new \App\MyStuff\Object('light', 'kitchen');
+            $light->addState($state);
+            $slot = new \App\MyStuff\Slot($light);
 
 
-        //test if can retrieve and pop off end of lastaction and lastcontroller array
+            $state2 = new \App\MyStuff\State('on', 'off');
+            $fan = new \App\MyStuff\Object('fan', 'office');
+            $fan->addState($state2);
+            $slot2 = new \App\MyStuff\Slot($fan);
+
+            $remote->addController($slot)->addController($slot2);
+
+            $remote->activate(1);
+
+            $this->assertEquals(1, count($remote->lastActionUsedLog));
+            $this->assertEquals(1, count($remote->lastActionUsedLog));
+
+            $lastController = $remote->getLastControllerFromLogThenPop();
+            $action = $remote->getLastActionFromLogThenPop();
+
+            $this->assertEquals(0, count($remote->lastActionUsedLog));
+            $this->assertEquals(0, count($remote->lastControllerUsedLog));
+
+            $this->assertEquals('activate', $action);
+            $this->assertEquals($remote->getObjectType(1), $lastController->object->getType());
+            $this->assertEquals($remote->getObjectLocation(1), $lastController->object->getLocation());
+
+
+            $remote->activate(2);
+
+            $this->assertEquals(1, count($remote->lastActionUsedLog));
+            $this->assertEquals(1, count($remote->lastActionUsedLog));
+
+            $lastController2 = $remote->getLastControllerFromLogThenPop();
+            $action2 = $remote->getLastActionFromLogThenPop();
+
+            $this->assertEquals(0, count($remote->lastActionUsedLog));
+            $this->assertEquals(0, count($remote->lastControllerUsedLog));
+
+            $this->assertEquals('activate', $action2);
+            $this->assertEquals($remote->getObjectType(2), $lastController2->object->getType());
+            $this->assertEquals($remote->getObjectLocation(2), $lastController2->object->getLocation());
+
+        }
 
         //test if can call methods in the backwards order using an undo function
 

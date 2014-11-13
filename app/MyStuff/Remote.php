@@ -145,5 +145,20 @@ class Remote {
         return $this->getController(end($this->lastControllerUsedLog));
     }
 
+    public function getLastActionFromLogThenPop()
+    {
+        return array_pop($this->lastActionUsedLog);
+    }
+
+    public function getLastControllerFromLogThenPop()
+    {
+        $lastControllerUsed = $this->getLastControllerFromLog();
+
+        array_pop($this->lastControllerUsedLog);
+
+       return $lastControllerUsed;
+
+    }
+
 
 }
