@@ -247,28 +247,32 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
 
         }
 
-//        public function test_remote_can_store_and_retrieve_lastactions_and_lastcontrollers_in_arrays_on_remote()
-//        {
-//            $remote = new \App\MyStuff\Remote();
-//
-//            $state = new \App\MyStuff\State('on', 'off');
-//            $light = new \App\MyStuff\Object('light', 'kitchen');
-//            $light->addState($state);
-//            $slot = new \App\MyStuff\Slot($light);
-//
-//
-//            $state2 = new \App\MyStuff\State('on', 'off');
-//            $fan = new \App\MyStuff\Object('fan', 'office');
-//            $fan->addState($state2);
-//            $slot2 = new \App\MyStuff\Slot($fan);
-//
-//            $remote->addController($slot)->addController($slot2);
-//
-//
-//
-//
-//
-//        }
+        public function test_remote_can_store_lastactions_and_lastcontrollers_in_arrays_on_remote()
+        {
+            $remote = new \App\MyStuff\Remote();
+
+            $state = new \App\MyStuff\State('on', 'off');
+            $light = new \App\MyStuff\Object('light', 'kitchen');
+            $light->addState($state);
+            $slot = new \App\MyStuff\Slot($light);
+
+
+            $state2 = new \App\MyStuff\State('on', 'off');
+            $fan = new \App\MyStuff\Object('fan', 'office');
+            $fan->addState($state2);
+            $slot2 = new \App\MyStuff\Slot($fan);
+
+            $remote->addController($slot)->addController($slot2);
+
+            $remote->activate(1);
+            $this->assertEquals(1, count($remote->lastActionUsedLog));
+            $this->assertEquals(1, count($remote->lastControllerUsedLog));
+
+            $remote->deactivate(2);
+            $this->assertEquals(2, count($remote->lastActionUsedLog));
+            $this->assertEquals(2, count($remote->lastControllerUsedLog));
+
+        }
 
         //test if can retreive last element of lastaction and last controller array
 
