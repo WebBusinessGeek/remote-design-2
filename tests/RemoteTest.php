@@ -275,15 +275,46 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
         }
 
 
-        public function test_remote_can_retrieve_lastaction_from_the_logs()
+        public function test_remote_can_retrieve_lastaction_and_lastcontroller_from_the_logs()
         {
-            
+            $remote = new \App\MyStuff\Remote();
+
+            $state = new \App\MyStuff\State('on', 'off');
+            $light = new \App\MyStuff\Object('light', 'kitchen');
+            $light->addState($state);
+            $slot = new \App\MyStuff\Slot($light);
+
+
+            $state2 = new \App\MyStuff\State('on', 'off');
+            $fan = new \App\MyStuff\Object('fan', 'office');
+            $fan->addState($state2);
+            $slot2 = new \App\MyStuff\Slot($fan);
+
+            $remote->addController($slot)->addController($slot2);
+
+            $remote->activate(1);
+            $this->assertEquals('activate', $remote->getLastActionFromLog());
+            $this->assertEquals($remote->getObjectLocation(1), $remote->getLastControllerFromLog()->object->getLocation());
+            $this->assertEquals($remote->getObjectType(1), $remote->getLastControllerFromLog()->object->getType());
+
+            $remote->activate(2);
+            $this->assertEquals('activate', $remote->getLastActionFromLog());
+            $this->assertEquals($remote->getObjectLocation(2), $remote->getLastControllerFromLog()->object->getLocation());
+            $this->assertEquals($remote->getObjectType(2), $remote->getLastControllerFromLog()->object->getType());
+
+            $remote->deactivate(1);
+            $this->assertEquals('deactivate', $remote->getLastActionFromLog());
+            $this->assertEquals($remote->getObjectLocation(1), $remote->getLastControllerFromLog()->object->getLocation());
+            $this->assertEquals($remote->getObjectType(1), $remote->getLastControllerFromLog()->object->getType());
+
+            $remote->deactivate(2);
+            $this->assertEquals('deactivate', $remote->getLastActionFromLog());
+            $this->assertEquals($remote->getObjectLocation(2), $remote->getLastControllerFromLog()->object->getLocation());
+            $this->assertEquals($remote->getObjectType(2), $remote->getLastControllerFromLog()->object->getType());
+
         }
 
-        public function test_remote_can_retrieve_lastcontroller_from_the_logs()
-        {
 
-        }
 
         //test if can retrieve and pop off end of lastaction and lastcontroller array
 

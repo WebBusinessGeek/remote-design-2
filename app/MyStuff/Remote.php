@@ -24,6 +24,10 @@ class Remote {
     public function __construct()
     {
         $this->controller = [];
+
+        $this->lastControllerUsedLog = [];
+
+        $this->lastActionUsedLog = [];
     }
 
     public function addController(ControllerInterface $controller)
@@ -131,6 +135,15 @@ class Remote {
         return $this;
     }
 
+    public function getLastActionFromLog()
+    {
+        return end($this->lastActionUsedLog);
+    }
+
+    public function getLastControllerFromLog()
+    {
+        return $this->getController(end($this->lastControllerUsedLog));
+    }
 
 
 }
