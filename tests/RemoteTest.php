@@ -96,7 +96,7 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
             $this->assertEquals('livingRoom', $remote->getObjectLocation(2));
         }
 
-        public function test_remote_can_call_activate_and_deactivate_functions()
+        public function test_remote_can_call_activate_and_deactivate_functions_on_slot()
         {
             $remote = new \App\MyStuff\Remote();
 
@@ -109,6 +109,20 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
             $this->assertEquals('light in the kitchen is on', $remote->getController(1)->activate());
             $this->assertEquals('light in the kitchen is off', $remote->getController(1)->deactivate());
 
+        }
+
+        public function test_remote_can_call_activate_and_deactivate_function()
+        {
+            $remote = new \App\MyStuff\Remote();
+            $state = new \App\MyStuff\State('on', 'off');
+            $light = new \App\MyStuff\Object('light', 'kitchen');
+            $light->addState($state);
+            $slot = new \App\MyStuff\Slot($light);
+
+            $remote->addController($slot);
+
+            $this->assertEquals('light in the kitchen is on', $remote->activate(1));
+            $this->assertEquals('light in the kitchen is off', $remote->deactivate(1));
         }
 
 

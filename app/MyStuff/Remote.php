@@ -52,4 +52,14 @@ class Remote {
         return $controller->object->getLocation();
     }
 
+    public function activate($slot)
+    {
+        return $this->getController($slot)->activate();
+    }
+
+    public function deactivate($slot)
+    {
+        return $this->getController($slot)->deactivate();
+    }
+
 }
