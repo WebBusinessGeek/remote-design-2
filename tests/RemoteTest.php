@@ -125,35 +125,39 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
             $this->assertEquals('light in the kitchen is off', $remote->deactivate(1));
         }
 
-//        public function test_remote_can_store_last_controller_used_after_activate_and_deactivate_functions()
-//        {
-//            $remote = new \App\MyStuff\Remote();
-//
-//            $state = new \App\MyStuff\State('on', 'off');
-//            $light = new \App\MyStuff\Object('light', 'kitchen');
-//            $light->addState($state);
-//            $slot = new \App\MyStuff\Slot($light);
-//
-//            $state2 = new \App\MyStuff\State('on', 'off');
-//            $fan = new \App\MyStuff\Object('fan', 'kitchen');
-//            $fan->addState($state2);
-//            $slot2 = new \App\MyStuff\Slot($fan);
+        public function test_remote_can_store_last_controller_used_after_activate_and_deactivate_functions()
+        {
+            $remote = new \App\MyStuff\Remote();
 
-//            $remote->addController($slot)->addController($slot);
-//
-//            $remote->activate(1);
-//            $this->assertEquals($remote->getController(1), $remote->getLastControllerUsed());
-//
-//            $remote->activate(2);
-//            $this->assertEquals($remote->getController(2), $remote->getLastControllerUsed());
-//
-//            $remote->deactivate(1);
-//            $this->assertEquals($remote->getController(), $remote->getLastControllerUsed());
-//
-//            $remote->deactivate(2);
-//            $this->assertEquals($remote->getController(2), $remote->getLastControllerUsed());
+            $state = new \App\MyStuff\State('on', 'off');
+            $light = new \App\MyStuff\Object('light', 'kitchen');
+            $light->addState($state);
+            $slot = new \App\MyStuff\Slot($light);
 
-//        }
+            $state2 = new \App\MyStuff\State('on', 'off');
+            $fan = new \App\MyStuff\Object('fan', 'office');
+            $fan->addState($state2);
+            $slot2 = new \App\MyStuff\Slot($fan);
+
+            $remote->addController($slot)->addController($slot2);
+
+            $remote->activate(1);
+            $this->assertEquals($remote->getObjectType(1), $remote->getLastControllerUsed()->object->getType());
+            $this->assertEquals($remote->getObjectLocation(1), $remote->getLastControllerUsed()->object->getLocation());
+
+            $remote->activate(2);
+            $this->assertEquals($remote->getObjectType(2), $remote->getLastControllerUsed()->object->getType());
+            $this->assertEquals($remote->getObjectLocation(2), $remote->getLastControllerUsed()->object->getLocation());
+
+            $remote->deactivate(1);
+            $this->assertEquals($remote->getObjectType(1), $remote->getLastControllerUsed()->object->getType());
+            $this->assertEquals($remote->getObjectLocation(1), $remote->getLastControllerUsed()->object->getLocation());
+
+            $remote->deactivate(2);
+            $this->assertEquals($remote->getObjectType(2), $remote->getLastControllerUsed()->object->getType());
+            $this->assertEquals($remote->getObjectLocation(2), $remote->getLastControllerUsed()->object->getLocation());
+            
+        }
         //i need to know the last action "activate" or "deactivate"
 
 

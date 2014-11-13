@@ -63,6 +63,8 @@ class Remote {
 
     public function deactivate($slot)
     {
+        $this->setLastControllerUsed($slot);
+
         return $this->getController($slot)->deactivate();
     }
 
