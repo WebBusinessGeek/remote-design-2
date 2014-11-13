@@ -219,27 +219,33 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
 
         }
 
-//        public function test_remote_can_call_method_based_on_lastaction_and_lastcontroller()
-//        {
-//            $remote = new \App\MyStuff\Remote();
-//
-//            $state = new \App\MyStuff\State('on', 'off');
-//            $light = new \App\MyStuff\Object('light', 'kitchen');
-//            $light->addState($state);
-//            $slot = new \App\MyStuff\Slot($light);
-//
-//            $state2 = new \App\MyStuff\State('on', 'off');
-//            $fan = new \App\MyStuff\Object('fan', 'office');
-//            $fan->addState($state2);
-//            $slot2 = new \App\MyStuff\Slot($fan);
-//
-//            $remote->addController($slot)->addController($slot2);
-//
-//            $remote->activate(1);
-//
-//
-//
-//        }
+        public function test_remote_can_call_method_based_on_passed_in_action_and_controller()
+        {
+            $remote = new \App\MyStuff\Remote();
+
+            $state = new \App\MyStuff\State('on', 'off');
+            $light = new \App\MyStuff\Object('light', 'kitchen');
+            $light->addState($state);
+            $slot = new \App\MyStuff\Slot($light);
+
+            $state2 = new \App\MyStuff\State('on', 'off');
+            $fan = new \App\MyStuff\Object('fan', 'office');
+            $fan->addState($state2);
+            $slot2 = new \App\MyStuff\Slot($fan);
+
+            $remote->addController($slot)->addController($slot2);
+
+
+            $this->assertEquals('light in the kitchen is on', $remote->activate(1));
+            $this->assertEquals('light in the kitchen is off', $remote->forceDeactivate(1));
+            $this->assertEquals('light in the kitchen is on', $remote->callControllerAndAction($remote->getLastControllerUsed(), $remote->getLastActionUsed()));
+
+            $this->assertEquals('fan in the office is on', $remote->forceActivate(2));
+            $this->assertEquals('fan in the office is off', $remote->deactivate(2));
+            $this->assertEquals('fan in the office is on', $remote->forceActivate(2));
+            $this->assertEquals('fan in the office is off', $remote->callControllerAndAction($remote->getLastControllerUsed(), $remote->getLastActionUsed()));
+
+        }
         //test if can store lastactions and lastcontrollers in arrays on remote
 
 
