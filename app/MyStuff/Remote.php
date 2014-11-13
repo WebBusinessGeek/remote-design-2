@@ -160,7 +160,10 @@ class Remote {
 
     }
 
-
+    public function undo()
+    {
+        return $this->getLastControllerFromlogThenPop()->undo();
+    }
 
 
 }

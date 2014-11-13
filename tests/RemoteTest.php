@@ -366,7 +366,29 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
 
         public function test_remote_calls_undo_method_on_controllable_object_stored_in_lastControllerLog_then_pops_off_from_log()
         {
+            $remote = new \App\MyStuff\Remote();
 
+            $state = new \App\MyStuff\State('on', 'off');
+            $light = new \App\MyStuff\Object('light', 'kitchen');
+            $light->addState($state);
+            $slot = new \App\MyStuff\Slot($light);
+
+
+            $state2 = new \App\MyStuff\State('on', 'off');
+            $fan = new \App\MyStuff\Object('fan', 'office');
+            $fan->addState($state2);
+            $slot2 = new \App\MyStuff\Slot($fan);
+
+            $remote->addController($slot)->addController($slot2);
+
+            $this->assertEquals('light in the kitchen is on', $remote->activate(1));
+            $this->assertEquals('light in the kitchen is off', $remote->undo());
+
+            $remote->activate(2);
+            $this->assertEquals('fan in the office is off', $remote->deactivate(2));
+            $this->assertEquals('fan in the office is on', $remote->undo());
+            $this->assertEquals('fan in the office is off', $remote->undo());
+            $this->assertEquals('cant undo', $remote->undo());
         }
 
         //test if tells if undoable
