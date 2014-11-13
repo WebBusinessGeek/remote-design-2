@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2567d228-cd19-4a80-b021-53ddecc0e4ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MyStuff/Remote.php" afterPath="$PROJECT_DIR$/app/MyStuff/Remote.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/RemoteTest.php" afterPath="$PROJECT_DIR$/tests/RemoteTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="remotedesign2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +29,8 @@
       <file leaf-file-name="RemoteTest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/RemoteTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68345326" vertical-offset="6175" max-vertical-offset="7175">
-              <caret line="271" column="33" selection-start-line="271" selection-start-column="33" selection-end-line="271" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.4964029" vertical-offset="6505" max-vertical-offset="7400">
+              <caret line="279" column="12" selection-start-line="279" selection-start-column="12" selection-end-line="279" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -577,8 +575,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/RemoteTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68345326" vertical-offset="6175" max-vertical-offset="7175">
-          <caret line="271" column="33" selection-start-line="271" selection-start-column="33" selection-end-line="271" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.4964029" vertical-offset="6505" max-vertical-offset="7275">
+          <caret line="279" column="12" selection-start-line="279" selection-start-column="12" selection-end-line="279" selection-end-column="12" />
           <folding />
         </state>
       </provider>
