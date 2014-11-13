@@ -247,7 +247,7 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
 
         }
 
-//        public function test_remote_can_store_lastactions_and_lastcontrollers_in_arrays_on_remote()
+//        public function test_remote_can_store_and_retrieve_lastactions_and_lastcontrollers_in_arrays_on_remote()
 //        {
 //            $remote = new \App\MyStuff\Remote();
 //
@@ -263,6 +263,8 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
 //            $slot2 = new \App\MyStuff\Slot($fan);
 //
 //            $remote->addController($slot)->addController($slot2);
+//
+//
 //
 //
 //

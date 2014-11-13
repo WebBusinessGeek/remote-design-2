@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2567d228-cd19-4a80-b021-53ddecc0e4ef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/RemoteTest.php" afterPath="$PROJECT_DIR$/tests/RemoteTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="remotedesign2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,8 +29,8 @@
       <file leaf-file-name="RemoteTest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/RemoteTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78417265" vertical-offset="5705" max-vertical-offset="7025">
-              <caret line="255" column="39" selection-start-line="255" selection-start-column="39" selection-end-line="255" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.17266187" vertical-offset="6030" max-vertical-offset="7075">
+              <caret line="251" column="32" selection-start-line="251" selection-start-column="32" selection-end-line="251" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -528,8 +527,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/RemoteTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78417265" vertical-offset="5705" max-vertical-offset="7025">
-          <caret line="255" column="39" selection-start-line="255" selection-start-column="39" selection-end-line="255" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.17266187" vertical-offset="6030" max-vertical-offset="7075">
+          <caret line="251" column="32" selection-start-line="251" selection-start-column="32" selection-end-line="251" selection-end-column="32" />
           <folding />
         </state>
       </provider>
