@@ -248,5 +248,13 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
         }
         //test if can store lastactions and lastcontrollers in arrays on remote
 
+        //test if can retreive last element of lastaction and last controller array
+
+        //test if can retrieve and pop off end of lastaction and lastcontroller array
+
+        //test if can call methods in the backwards order using an undo function
+
+        //test if tells if undoable
+
 
 }
