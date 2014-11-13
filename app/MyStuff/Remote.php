@@ -13,6 +13,8 @@ class Remote {
 
     public $controller;
 
+    public $lastController;
+
     public function __construct()
     {
         $this->controller = [];
@@ -54,12 +56,24 @@ class Remote {
 
     public function activate($slot)
     {
+        $this->setLastControllerUsed($slot);
+
         return $this->getController($slot)->activate();
     }
 
     public function deactivate($slot)
     {
         return $this->getController($slot)->deactivate();
+    }
+
+    public function getLastControllerUsed()
+    {
+        return $this->lastController;
+    }
+
+    public function setLastControllerUsed($slot)
+    {
+        return $this->lastController = $this->getController($slot);
     }
 
 }
