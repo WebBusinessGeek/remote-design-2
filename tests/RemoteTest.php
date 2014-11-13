@@ -156,10 +156,30 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
             $remote->deactivate(2);
             $this->assertEquals($remote->getObjectType(2), $remote->getLastControllerUsed()->object->getType());
             $this->assertEquals($remote->getObjectLocation(2), $remote->getLastControllerUsed()->object->getLocation());
-            
-        }
-        //i need to know the last action "activate" or "deactivate"
 
+        }
+
+
+        public function test_remote_can_store_if_activate_or_deactivate_method_was_called_last()
+        {
+            $remote = new \App\MyStuff\Remote();
+
+            $state = new \App\MyStuff\State('on', 'off');
+            $light = new \App\MyStuff\Object('light', 'kitchen');
+            $light->addState($state);
+            $slot = new \App\MyStuff\Slot($light);
+
+            $remote->addController($slot);
+
+            $this->assertEquals(null, $remote->getLastActionUsed());
+
+            $remote->activate(1);
+            $this->assertEquals('activate', $remote->getLastActionUsed());
+
+            $remote->deactivate(1);
+            $this->assertEquals('deactivate', $remote->getLastActionUsed());
+
+        }
 
 
 }
