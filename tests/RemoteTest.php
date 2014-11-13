@@ -181,5 +181,9 @@ class RemoteTest extends PHPUnit_Framework_TestCase {
 
         }
 
+        //either
+        //test if can call method based on lastaction and lastcontroller
+        //test if can store lastactions and lastcontrollers in arrays on remote
+
 
 }
