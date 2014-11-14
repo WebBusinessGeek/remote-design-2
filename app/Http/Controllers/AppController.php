@@ -10,12 +10,9 @@ class AppController extends Controller {
      */
 	public function showHome()
 	{
-		return view('app.master');
+		return view('app.index');
 	}
 
-	public function test()
-	{
-		return view('app.test');
-	}
+
 
 }
