@@ -11,4 +11,9 @@ namespace App\MyStuff;
 
 interface AppFactoryContract {
 
+    public function createNewState($default, $deactivate, $low = null, $high = null);
+
+    public function createNewObject($type, $location);
+
+
 }

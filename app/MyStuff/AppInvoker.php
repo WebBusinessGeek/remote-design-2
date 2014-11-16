@@ -11,4 +11,10 @@ namespace App\MyStuff;
 
 class AppInvoker implements AppInvokerContract{
 
+
+    public function addStateToObject(ControllableInterface $controllable, StateAbleInterface $state)
+    {
+        return $controllable->addState($state);
+    }
+
 }

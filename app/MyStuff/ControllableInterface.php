@@ -11,4 +11,6 @@ namespace App\MyStuff;
 
 interface ControllableInterface {
 
+    public function addState(StateAbleInterface $state);
+
 }
