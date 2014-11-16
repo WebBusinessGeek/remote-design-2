@@ -11,6 +11,7 @@ namespace tests;
 
 use App\MyStuff\AppFactory;
 
+
 class AppFactoryTest extends \PHPUnit_Framework_TestCase {
 
     public function test_appFactory_createNewState_method_creates_a_new_state()
@@ -20,6 +21,16 @@ class AppFactoryTest extends \PHPUnit_Framework_TestCase {
         $state = $factory->createNewState('on', 'off');
 
         $this->assertEquals(' is off', $state->getCurrentState());
+    }
+
+    public function test_appFactory_createNewObject_method_creates_a_new_object()
+    {
+        $factory = new AppFactory();
+
+        $object = $factory->createNewObject('light', 'kitchen');
+
+        $this->assertEquals('light', $object->type);
+        $this->assertEquals('kitchen', $object->location);
     }
 
 }

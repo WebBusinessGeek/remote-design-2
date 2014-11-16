@@ -27,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AppFactory.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/MyStuff/AppFactory.php">
+      <file leaf-file-name="AppFactoryTest.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/AppFactoryTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4676259" vertical-offset="0" max-vertical-offset="695">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7194245" vertical-offset="200" max-vertical-offset="925">
+              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -511,13 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/MyStuff/ObjectTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17985612" vertical-offset="75" max-vertical-offset="1025">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/RemoteTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8201439" vertical-offset="9530" max-vertical-offset="10400">
@@ -658,35 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/MyStuff/Object.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53956836" vertical-offset="0" max-vertical-offset="1400">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1415833627000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/AppFactoryTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2877698" vertical-offset="0" max-vertical-offset="695">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <marker date="1416178868000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
-            <marker date="1416178868000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1416178868000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/MyStuff/State.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68345326" vertical-offset="0" max-vertical-offset="3300">
@@ -718,10 +682,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/MyStuff/Object.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21582733" vertical-offset="225" max-vertical-offset="1400">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1415833627000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415833627000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/MyStuff/ObjectTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17985612" vertical-offset="75" max-vertical-offset="1025">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding>
+            <marker date="1415755158000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1415755158000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415755158000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415755158000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415755158000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1415755158000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/MyStuff/AppFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4676259" vertical-offset="0" max-vertical-offset="695">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5755396" vertical-offset="0" max-vertical-offset="695">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+          <folding>
+            <marker date="1416179258000" expanded="false" signature="-1:-1" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1416179258000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1416179258000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1416179258000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/AppFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7194245" vertical-offset="200" max-vertical-offset="925">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding />
         </state>
       </provider>

@@ -17,5 +17,9 @@ class AppFactory implements AppFactoryContract {
         return new State($default, $deactivate, $low, $high);
     }
 
+    public function createNewObject($type, $location)
+    {
+        return new Object($type, $location);
+    }
 
 }
