@@ -11,4 +11,5 @@ namespace App\MyStuff;
 
 interface AppInvokerContract {
 
+    public function addStateToObject(ControllableInterface $controllable, StateAbleInterface $state);
 }
