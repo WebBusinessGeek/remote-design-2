@@ -12,5 +12,10 @@ namespace App\MyStuff;
 class AppFactory implements AppFactoryContract {
 
 
+    public function createNewState($default, $deactivate, $low = null, $high = null)
+    {
+        return new State($default, $deactivate, $low, $high);
+    }
+
 
 }
