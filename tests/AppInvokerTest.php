@@ -101,4 +101,39 @@ class AppInvokerTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('light in the kitchen is off', $invoker->deactivateControllerOnRemote($remote, 1));
         $this->assertEquals('fan in the office is off', $invoker->deactivateControllerOnRemote($remote, 2));
     }
+
+    public function test_appInvoker_undoOnRemote_method_will_call_undo_method_on_remote()
+    {
+        $invoker = new AppInvoker();
+
+        $factory = new AppFactory();
+
+        $state = $factory->createNewState('on', 'off');
+        $light = $factory->createNewObject('light', 'kitchen');
+        $invoker->addStateToObject($light, $state);
+        $slot = $factory->createNewController($light);
+
+        $state2 = $factory->createNewState('on', 'off');
+        $fan = $factory->createNewObject('fan', 'office');
+        $invoker->addStateToObject($fan, $state2);
+        $slot2 = $factory->createNewController($fan);
+
+        $remote = $factory->createNewRemote();
+
+        $remote->addController($slot)->addController($slot2);
+
+        $this->assertEquals('light in the kitchen is on',$invoker->activateControllerOnRemote($remote, 1));
+        $this->assertEquals('fan in the office is on', $invoker->activateControllerOnRemote($remote, 2));
+
+        $this->assertEquals('light in the kitchen is off', $invoker->deactivateControllerOnRemote($remote, 1));
+        $this->assertEquals('fan in the office is off', $invoker->deactivateControllerOnRemote($remote, 2));
+
+        $this->assertEquals('fan in the office is on', $invoker->undoOnRemote($remote));
+        $this->assertEquals('light in the kitchen is on', $invoker->undoOnRemote($remote));
+
+        $this->assertEquals('fan in the office is off', $invoker->undoOnRemote($remote));
+        $this->assertEquals('light in the kitchen is off', $invoker->undoOnRemote($remote));
+
+        $this->assertEquals('Cant undo. You have to do something first.', $invoker->undoOnRemote($remote));
+    }
 }
