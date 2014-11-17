@@ -16,4 +16,6 @@ interface AppInvokerContract {
     public function addControllerToRemote(Remote $remote, ControllerInterface $controller);
 
     public function activateControllerOnRemote(Remote $remote, $controllerNumber);
+
+    public function deactivateControllerOnRemote(Remote $remote, $controllerNumber);
 }

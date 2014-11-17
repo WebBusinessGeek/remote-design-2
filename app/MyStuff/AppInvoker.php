@@ -26,4 +26,9 @@ class AppInvoker implements AppInvokerContract{
     {
         return $remote->activate($controllerNumber);
     }
+
+    public function deactivateControllerOnRemote(Remote $remote, $controllerNumber)
+    {
+
+    }
 }
