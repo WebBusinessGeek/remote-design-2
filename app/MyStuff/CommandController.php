@@ -9,6 +9,9 @@
 namespace App\MyStuff;
 
 
+use Illuminate\Container\Container;
+use Illuminate\Foundation\Application;
+
 class CommandController {
 
     public $factory;
@@ -19,7 +22,11 @@ class CommandController {
 
     public function __construct()
     {
+        $app = Application::getInstance();
 
+        $this->factory = $app->make('App\MyStuff\AppFactoryContract');
+        $this->invoker = $app->make('App\MyStuff\AppInvokerContract');
+        $this->repository = $app->make('App\MyStuff\AppRepositoryContract');
     }
 
 }

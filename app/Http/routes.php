@@ -15,6 +15,8 @@ $router->get('/', 'AppController@showHome');
 
 $router->get('/test', 'AppController@test');
 
+$router->get('/testtest', 'HomeController@index');
+
 /*
 |--------------------------------------------------------------------------
 | Authentication & Password Reset Controllers

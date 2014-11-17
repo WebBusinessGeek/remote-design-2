@@ -1,8 +1,11 @@
 <?php namespace App\Http\Controllers;
 
+use App\MyStuff\CommandController;
 use App\MyStuff\Object;
 use App\MyStuff\Remote;
 use App\MyStuff\Slot;
+use Illuminate\Container\Container;
+use Illuminate\Foundation\Application;
 
 class HomeController extends Controller {
 
@@ -21,7 +24,8 @@ class HomeController extends Controller {
 
 	public function index()
 	{
-		return 'hello';
+		$commandController = new CommandController();
+		dd($commandController);
 
 
 	}
