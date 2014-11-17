@@ -22,4 +22,9 @@ class AppFactory implements AppFactoryContract {
         return new Object($type, $location);
     }
 
+    public function createNewController(ControllableInterface $controllable)
+    {
+        return new Slot($controllable);
+    }
+
 }

@@ -10,6 +10,7 @@ namespace tests;
 
 
 use App\MyStuff\AppFactory;
+use Illuminate\Support\Facades\App;
 
 
 class AppFactoryTest extends \PHPUnit_Framework_TestCase {
@@ -31,6 +32,20 @@ class AppFactoryTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals('light', $object->type);
         $this->assertEquals('kitchen', $object->location);
+    }
+
+    public function test_appFactory_createNewController_method_creates_a_new_controller()
+    {
+        $factory = new AppFactory();
+
+        $state = $factory->createNewState('on', 'off');
+        $light = $factory->createNewObject('light', 'kitchen');
+
+        $light->addState($state);
+        $slot = $factory->createNewController($light);
+
+        $this->assertEquals('light in the kitchen is on', $slot->activate());
+        $this->assertEquals('light in the kitchen is off', $slot->deactivate());
     }
 
 }
