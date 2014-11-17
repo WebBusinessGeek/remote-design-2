@@ -27,4 +27,9 @@ class AppFactory implements AppFactoryContract {
         return new Slot($controllable);
     }
 
+    public function createNewRemote()
+    {
+        return new Remote();
+    }
+
 }

@@ -15,5 +15,9 @@ interface AppFactoryContract {
 
     public function createNewObject($type, $location);
 
+    public function createNewController(ControllableInterface $controllable);
+
+    public function createNewRemote();
+
 
 }

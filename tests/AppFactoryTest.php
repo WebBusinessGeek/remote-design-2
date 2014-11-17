@@ -48,4 +48,26 @@ class AppFactoryTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('light in the kitchen is off', $slot->deactivate());
     }
 
+    public function test_appFactory_createNewRemote_method_creates_a_new_remote()
+    {
+        $factory = new AppFactory();
+
+        $remote = $factory->createNewRemote();
+
+        $this->assertEquals(0, count($remote->controller));
+        $this->assertEquals(0, count($remote->lastControllerUsedLog));
+        $this->assertEquals(0, count($remote->lastActionUsedLog));
+
+        $state = $factory->createNewState('on', 'off');
+        $light = $factory->createNewObject('light', 'kitchen');
+
+        $light->addState($state);
+        $slot = $factory->createNewController($light);
+
+        $remote->addController($slot);
+
+        $this->assertEquals(1, count($remote->controller));
+
+    }
+
 }
