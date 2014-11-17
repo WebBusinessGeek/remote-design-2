@@ -23,11 +23,9 @@ class CommandController {
 
     public function __construct()
     {
-//        $app = Application::getInstance();
-
-
         $app = new Application();
 
+        //very ugly workaround for resolvement of container bindings issue in Laravel 5 pre-release
         $app->bind('App\MyStuff\AppFactoryContract',
             'App\MyStuff\AppFactory'
         );
@@ -44,6 +42,17 @@ class CommandController {
         $this->invoker = $app->make('App\MyStuff\AppInvokerContract');
         $this->repository = $app->make('App\MyStuff\AppRepositoryContract');
 
+    }
+
+    public function createObjectAndState($type, $location, $default, $deactivate, $low = null, $high = null)
+    {
+        $state = $this->factory->createNewState($default, $deactivate, $low, $high);
+
+        $object = $this->factory->createNewObject($type, $location);
+
+        $this->invoker->addStateToObject($object, $state);
+
+        return $object;
     }
 
 
