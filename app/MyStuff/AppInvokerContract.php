@@ -12,4 +12,8 @@ namespace App\MyStuff;
 interface AppInvokerContract {
 
     public function addStateToObject(ControllableInterface $controllable, StateAbleInterface $state);
+
+    public function addControllerToRemote(Remote $remote, ControllerInterface $controller);
+
+    public function activateControllerOnRemote(Remote $remote, $controllerNumber);
 }

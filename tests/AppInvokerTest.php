@@ -50,4 +50,28 @@ class AppInvokerTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals(1, count($remote->controller));
     }
+
+    public function test_appInvoker_activateControllerOnRemote_method_activates_controller_on_remote()
+    {
+        $invoker = new AppInvoker();
+
+        $factory = new AppFactory();
+
+        $state = $factory->createNewState('on', 'off');
+        $light = $factory->createNewObject('light', 'kitchen');
+        $invoker->addStateToObject($light, $state);
+        $slot = $factory->createNewController($light);
+
+        $state2 = $factory->createNewState('on', 'off');
+        $fan = $factory->createNewObject('fan', 'office');
+        $invoker->addStateToObject($fan, $state2);
+        $slot2 = $factory->createNewController($fan);
+
+        $remote = $factory->createNewRemote();
+
+        $remote->addController($slot)->addController($slot2);
+
+        $this->assertEquals('light in the kitchen is on', $invoker->activateControllerOnRemote($remote, 1));
+        $this->assertEquals('fan in the office is on', $invoker->activateControllerOnRemote($remote, 2));
+    }
 }
