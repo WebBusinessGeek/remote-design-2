@@ -42,7 +42,17 @@ class CommandControllerTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals(true, is_object($slot));
         $this->assertObjectHasAttribute('object', $slot,'');
-        
+
+    }
+
+    public function test_commandController_createNewRemote_method_creates_and_returns_a_remote_class_instance()
+    {
+        $commandController = new CommandController();
+
+        $remote = $commandController->createNewRemote();
+
+        $this->assertEquals(true, is_object($remote));
+        $this->assertObjectHasAttribute('controller', $remote, '');
     }
 
 }

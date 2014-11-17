@@ -61,6 +61,10 @@ class CommandController {
     }
 
 
+    public function createNewRemote()
+    {
+        return $this->factory->createNewRemote();
+    }
 
 
 }

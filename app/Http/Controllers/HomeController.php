@@ -26,7 +26,11 @@ class HomeController extends Controller {
 	{
 		$commandController = new CommandController();
 		$slot = $commandController->createControllerWithObjectAndState('light', 'kitchen', 'on', 'off');
-		dd($slot);
+
+
+		$remote = $commandController->createNewRemote();
+
+		dd($remote);
 
 
 	}
