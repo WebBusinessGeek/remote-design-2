@@ -17,4 +17,9 @@ class AppInvoker implements AppInvokerContract{
         return $controllable->addState($state);
     }
 
+    public function addControllerToRemote(Remote $remote, ControllerInterface $controller)
+    {
+        return $remote->addController($controller);
+    }
+
 }
