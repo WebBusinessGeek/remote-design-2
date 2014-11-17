@@ -53,16 +53,6 @@ $app->singleton(
 */
 
 
-$app->bind('App\MyStuff\AppFactoryContract',
-	'App\MyStuff\AppFactory'
-);
 
-$app->bind('App\MyStuff\AppInvokerContract',
-	'App\MyStuff\AppInvoker'
-);
-
-$app->bind('App\MyStuff\AppRepositoryContract',
-	'App\MyStuff\AppRepository'
-);
 
 return $app;

@@ -15,11 +15,13 @@ class CommandControllerTest extends \PHPUnit_Framework_TestCase {
 
     public function test_commandController_is_constructed_with_a_factory_invoker_and_repository()
     {
-       // $commandController = new CommandController();
+        $commandController = new CommandController();
 
-//        $this->assertEquals('hey', $commandController->invoker);
-//        $this->assertEquals('hey2', $commandController->factory);
-//        $this->assertEquals('hey3', $commandController->repository);
+        $this->assertEquals(true, is_object($commandController->invoker));
+        $this->assertEquals(true, is_object($commandController->factory));
+        $this->assertEquals(true, is_object($commandController->repository));
+
+
     }
 
 }

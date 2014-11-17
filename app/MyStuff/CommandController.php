@@ -20,13 +20,35 @@ class CommandController {
 
     public $invoker;
 
+
     public function __construct()
     {
-        $app = Application::getInstance();
+//        $app = Application::getInstance();
+
+
+        $app = new Application();
+
+        $app->bind('App\MyStuff\AppFactoryContract',
+            'App\MyStuff\AppFactory'
+        );
+
+        $app->bind('App\MyStuff\AppInvokerContract',
+            'App\MyStuff\AppInvoker'
+        );
+
+        $app->bind('App\MyStuff\AppRepositoryContract',
+            'App\MyStuff\AppRepository'
+        );
 
         $this->factory = $app->make('App\MyStuff\AppFactoryContract');
         $this->invoker = $app->make('App\MyStuff\AppInvokerContract');
         $this->repository = $app->make('App\MyStuff\AppRepositoryContract');
+
     }
+
+
+
+
+
 
 }
