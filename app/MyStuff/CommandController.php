@@ -55,7 +55,10 @@ class CommandController {
         return $object;
     }
 
-
+    public function createControllerWithObjectAndState($type, $location, $default, $deactivate, $low = null, $high = null)
+    {
+        return $this->factory->createNewController($this->createObjectAndState($type, $location, $default, $deactivate, $low, $high));
+    }
 
 
 

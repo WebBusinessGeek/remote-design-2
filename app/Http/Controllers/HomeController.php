@@ -25,7 +25,8 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$commandController = new CommandController();
-		dd($commandController);
+		$slot = $commandController->createControllerWithObjectAndState('light', 'kitchen', 'on', 'off');
+		dd($slot);
 
 
 	}

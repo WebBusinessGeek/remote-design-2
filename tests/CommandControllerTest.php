@@ -34,4 +34,15 @@ class CommandControllerTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('light in the kitchen is off', $light->deactivate());
     }
 
+    public function test_commandController_createControllerWithObjectAndState_method_creates_controller_with_object_and_state_bound()
+    {
+        $commandController = new CommandController();
+
+        $slot = $commandController->createControllerWithObjectAndState('light', 'kitchen', 'on', 'off');
+
+        $this->assertEquals(true, is_object($slot));
+        $this->assertObjectHasAttribute('object', $slot,'');
+        
+    }
+
 }
