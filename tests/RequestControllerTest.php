@@ -22,5 +22,13 @@ class RequestControllerTest extends \PHPUnit_Framework_TestCase {
         $this->assertObjectHasAttribute('invoker', $requestController->commandController);
     }
 
-    
+
+    public function test_requestController_createnewRemote_method_creates_a_new_remote()
+    {
+        $requestController = new RequestController();
+
+        $remote = $requestController->createNewRemote();
+
+        $this->assertEquals(true, is_object($remote));
+    }
 }
