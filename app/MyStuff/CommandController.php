@@ -71,5 +71,21 @@ class CommandController {
         return $this->invoker->addControllerToRemote($remote, $controllerInterface);
     }
 
+    public function createControllerAndAddToRemote(Remote $remote, $type, $location, $default, $deactivate, $low = null, $high = null)
+    {
+        $controller = $this->createControllerWithObjectAndState($type, $location, $default, $deactivate, $low, $high);
+
+        return $this->addControllerToRemote($remote, $controller);
+    }
+
+    public function activateControllerOnRemote(Remote $remote, $numberOfController)
+    {
+        return $this->invoker->activateControllerOnRemote($remote, $numberOfController);
+    }
+
+    public function deactivateControllerOnRemote(Remote $remote, $numberOfController)
+    {
+        return $this->invoker->deactivateControllerOnRemote($remote, $numberOfController);
+    }
 
 }

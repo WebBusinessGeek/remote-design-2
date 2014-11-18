@@ -69,4 +69,49 @@ class CommandControllerTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('light in the kitchen is off', $remote->deactivate(1));
     }
 
+    public function test_commandController_createControllerAndAddToRemote_method_creates_a_controller_state_and_object_and_add_it_to_a_remote()
+    {
+        $commandController = new CommandController();
+
+        $remote = $commandController->createNewRemote();
+
+        $commandController->createControllerAndAddToRemote($remote, 'light', 'kitchen', 'on', 'off');
+
+        $this->assertEquals('light in the kitchen is on', $remote->activate(1));
+        $this->assertEquals('light in the kitchen is off', $remote->deactivate(1));
+    }
+
+    public function test_commandController_activateControllerOnRemote_method_calls_activate_on_correct_controller_on_remote()
+    {
+        $commandController = new CommandController();
+
+        $remote = $commandController->createNewRemote();
+
+        $commandController->createControllerAndAddToRemote($remote, 'light', 'kitchen', 'on', 'off');
+        $commandController->createControllerAndAddToRemote($remote, 'fan', 'office', 'on', 'off');
+
+        $this->assertEquals('light in the kitchen is on', $commandController->activateControllerOnRemote($remote, 1));
+
+        $this->assertEquals('fan in the office is on', $commandController->activateControllerOnRemote($remote, 2));
+
+    }
+
+    public function test_commandController_deactivateControllerOnRemote_method_calls_deactivate_on_correct_controller_on_remote()
+    {
+        $commandController = new CommandController();
+
+        $remote = $commandController->createNewRemote();
+
+        $commandController->createControllerAndAddToRemote($remote, 'light', 'kitchen', 'on', 'off');
+        $commandController->createControllerAndAddToRemote($remote, 'fan', 'office', 'on', 'off');
+
+        $this->assertEquals('light in the kitchen is on', $commandController->activateControllerOnRemote($remote, 1));
+        $this->assertEquals('fan in the office is on', $commandController->activateControllerOnRemote($remote, 2));
+
+
+        $this->assertEquals('light in the kitchen is off', $commandController->deactivateControllerOnRemote($remote, 1));
+
+        $this->assertEquals('fan in the office is off', $commandController->deactivateControllerOnRemote($remote, 2));
+    }
+
 }
