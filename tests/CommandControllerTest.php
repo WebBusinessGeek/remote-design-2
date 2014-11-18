@@ -55,4 +55,18 @@ class CommandControllerTest extends \PHPUnit_Framework_TestCase {
         $this->assertObjectHasAttribute('controller', $remote, '');
     }
 
+    public function test_commandController_addControllerToRemote_method_adds_controller_to_remote_object()
+    {
+        $commandController = new CommandController();
+
+        $remote = $commandController->createNewRemote();
+
+        $slot = $commandController->createControllerWithObjectAndState('light', 'kitchen','on', 'off');
+
+        $commandController->addControllerToRemote($remote, $slot);
+
+        $this->assertEquals('light in the kitchen is on', $remote->activate(1));
+        $this->assertEquals('light in the kitchen is off', $remote->deactivate(1));
+    }
+
 }

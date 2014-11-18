@@ -66,5 +66,10 @@ class CommandController {
         return $this->factory->createNewRemote();
     }
 
+    public function addControllerToRemote(Remote $remote, ControllerInterface $controllerInterface)
+    {
+        return $this->invoker->addControllerToRemote($remote, $controllerInterface);
+    }
+
 
 }
