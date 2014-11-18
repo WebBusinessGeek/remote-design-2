@@ -114,4 +114,25 @@ class CommandControllerTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('fan in the office is off', $commandController->deactivateControllerOnRemote($remote, 2));
     }
 
+    public function test_commandController_undo_method_calls_undo_on_remote()
+    {
+        $commandController = new CommandController();
+
+        $remote = $commandController->createNewRemote();
+
+        $commandController->createControllerAndAddToRemote($remote, 'light', 'kitchen', 'on', 'off');
+        $commandController->createControllerAndAddToRemote($remote, 'fan', 'office', 'on', 'off');
+
+        $this->assertEquals('light in the kitchen is on', $commandController->activateControllerOnRemote($remote, 1));
+        $this->assertEquals('fan in the office is on', $commandController->activateControllerOnRemote($remote, 2));
+        $this->assertEquals('light in the kitchen is off', $commandController->deactivateControllerOnRemote($remote, 1));
+        $this->assertEquals('fan in the office is off', $commandController->deactivateControllerOnRemote($remote, 2));
+
+        $this->assertEquals('fan in the office is on', $commandController->undoOnRemote($remote));
+        $this->assertEquals('light in the kitchen is on', $commandController->undoOnRemote($remote));
+        $this->assertEquals('fan in the office is off', $commandController->undoOnRemote($remote));
+        $this->assertEquals('light in the kitchen is off', $commandController->undoOnRemote($remote));
+        $this->assertEquals('Cant undo. You have to do something first.', $commandController->undoOnRemote($remote));
+    }
+
 }

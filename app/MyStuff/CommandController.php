@@ -88,4 +88,9 @@ class CommandController {
         return $this->invoker->deactivateControllerOnRemote($remote, $numberOfController);
     }
 
+    public function undoOnRemote(Remote $remote)
+    {
+        return $this->invoker->undoOnRemote($remote);
+    }
+
 }
