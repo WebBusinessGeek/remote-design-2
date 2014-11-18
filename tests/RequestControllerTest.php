@@ -10,6 +10,7 @@ namespace tests;
 
 
 use App\Http\Controllers\RequestController;
+use App\MyStuff\State;
 
 class RequestControllerTest extends \PHPUnit_Framework_TestCase {
 
@@ -31,6 +32,8 @@ class RequestControllerTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals(true, is_object($remote));
 
-        //COULD THIS BE BETTER!!!???
+        $requestController->commandController->createControllerAndAddToRemote($remote, 'light', 'kitchen', 'on', 'off');
+
+        $this->assertEquals('light in the kitchen is on', $remote->activate(1));
     }
 }
