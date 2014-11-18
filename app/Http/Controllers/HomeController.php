@@ -24,13 +24,9 @@ class HomeController extends Controller {
 
 	public function index()
 	{
-		$commandController = new CommandController();
-		$slot = $commandController->createControllerWithObjectAndState('light', 'kitchen', 'on', 'off');
+		$requestController = new RequestController();
 
-
-		$remote = $commandController->createNewRemote();
-
-		dd($remote);
+		dd($requestController);
 
 
 	}
