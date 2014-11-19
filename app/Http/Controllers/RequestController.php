@@ -27,4 +27,9 @@ class RequestController extends Controller {
 	{
 		return $this->commandController->activateControllerOnRemote($remote, $numberOfController);
 	}
+
+	public function deactivateControllerOnRemote(Remote $remote, $numberOfController)
+	{
+		return $this->commandController->deactivateControllerOnRemote($remote, $numberOfController);
+	}
 }

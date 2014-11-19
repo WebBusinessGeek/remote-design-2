@@ -50,7 +50,6 @@ class RequestControllerTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('light in the kitchen is on', $remote->activate(1));
     }
 
-    //activate controller
     public function test_requestController_activate_method_activates_a_controller()
     {
         $requestController = new RequestController();
@@ -63,6 +62,18 @@ class RequestControllerTest extends \PHPUnit_Framework_TestCase {
     }
 
     //deactivate controller
+    public function test_requestController_deactivate_method_deactivates_a_controller()
+    {
+        $requestController = new RequestController();
+
+        $remote = $requestController->createNewRemote();
+
+        $requestController->createControllerWithObjectAndStateAndAddToRemote($remote, 'light', 'kitchen', 'on', 'off');
+
+        $requestController->activateControllerOnRemote($remote, 1);
+
+        $this->assertEquals('light in the kitchen is off', $requestController->deactivateControllerOnRemote($remote, 1));
+    }
 
     //undo on remote
 }
