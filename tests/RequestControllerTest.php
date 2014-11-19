@@ -61,7 +61,6 @@ class RequestControllerTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('light in the kitchen is on', $requestController->activateControllerOnRemote($remote, 1));
     }
 
-    //deactivate controller
     public function test_requestController_deactivate_method_deactivates_a_controller()
     {
         $requestController = new RequestController();
@@ -76,4 +75,20 @@ class RequestControllerTest extends \PHPUnit_Framework_TestCase {
     }
 
     //undo on remote
+    public function test_requestController_undo_method_calls_undo_on_a_remote_object()
+    {
+        $requestController = new RequestController();
+
+        $remote = $requestController->createNewRemote();
+
+        $requestController->createControllerWithObjectAndStateAndAddToRemote($remote, 'light', 'kitchen', 'on', 'off');
+
+        $requestController->activateControllerOnRemote($remote, 1);
+
+        $requestController->deactivateControllerOnRemote($remote, 1);
+
+        $this->assertEquals('light in the kitchen is on', $requestController->undoOnRemote($remote));
+        $this->assertEquals('light in the kitchen is off', $requestController->undoOnRemote($remote));
+        $this->assertEquals('Cant undo. You have to do something first.', $requestController->undoOnRemote($remote));
+    }
 }
