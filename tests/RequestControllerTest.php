@@ -11,6 +11,7 @@ namespace tests;
 
 use App\Http\Controllers\RequestController;
 use App\MyStuff\State;
+use Symfony\Component\Routing\Tests\Fixtures\RedirectableUrlMatcher;
 
 class RequestControllerTest extends \PHPUnit_Framework_TestCase {
 
@@ -36,4 +37,22 @@ class RequestControllerTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals('light in the kitchen is on', $remote->activate(1));
     }
+
+    //create controller (controller,object,state,add to remote)
+    public function test_requestController_createController_method_creates_a_object_state_and_controller_and_adds_to_remote()
+    {
+        $requestController = new RequestController();
+
+        $remote = $requestController->createNewRemote();
+
+        $requestController->createControllerWithObjectAndStateAndAddToRemote($remote, 'light', 'kitchen', 'on', 'off');
+
+        $this->assertEquals('light in the kitchen is on', $remote->activate(1));
+    }
+
+    //activate controller
+
+    //deactivate controller
+
+    //undo on remote
 }

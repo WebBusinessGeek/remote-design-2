@@ -18,8 +18,8 @@ class RequestController extends Controller {
 		return $this->commandController->createNewRemote();
 	}
 
-//	public function createControllerAndAddToRemote(Remote $remote, $type, $location, $default, $deactivate, $low = null, $high = null)
-//	{
-//		return $this->commandController->createControllerAndAddToRemote($remote, $type, $location, $default, $deactivate, $low, $high);
-//	}
+	public function createControllerWithObjectAndStateAndAddToRemote(Remote $remote, $type, $location, $default, $deactivate, $low = null, $high = null)
+	{
+		return $this->commandController->createControllerAndAddToRemote($remote, $type, $location, $default, $deactivate, $low, $high);
+	}
 }
