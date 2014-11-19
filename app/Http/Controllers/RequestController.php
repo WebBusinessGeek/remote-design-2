@@ -22,4 +22,9 @@ class RequestController extends Controller {
 	{
 		return $this->commandController->createControllerAndAddToRemote($remote, $type, $location, $default, $deactivate, $low, $high);
 	}
+
+	public function activateControllerOnRemote(Remote $remote, $numberOfController)
+	{
+		return $this->commandController->activateControllerOnRemote($remote, $numberOfController);
+	}
 }
